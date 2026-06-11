@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Feishu × Claude Code — your AI engineer, living in your chat, never sleeping</title>
+<title>Always-On Agent Kit — Claude Code agents that run for months, not minutes</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%233370ff'/%3E%3Cstop offset='1' stop-color='%2341d1a7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3C/svg%3E" />
-<meta name="description" content="Run Claude Code from any Feishu chat and schedule autonomous agents that research, monitor, and ship — reporting straight to your phone. Self-hosted, your keys, no public IP. Request early access." />
+<meta name="description" content="Battle-tested agent templates and an operations playbook for scheduled Claude Code agents — memory protocol, state &amp; dedup, feedback loops, guardrails, anti-zombie ops. Extracted from a real production fleet. Works with cc-connect, any bridge, or bare cron." />
 <style>
   :root{
     --bg:#0b0d12; --bg2:#11141c; --card:#151925; --line:#222838;
@@ -119,39 +119,38 @@
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span class="dot"></span> Feishu&nbsp;×&nbsp;Claude Code</div>
+    <div class="brand"><span class="dot"></span> Always-On Agent Kit</div>
     <div class="navlinks">
-      <a href="#features" class="hidemob">Features</a>
-      <a href="#showcase" class="hidemob">In action</a>
+      <a href="#features" class="hidemob">What's inside</a>
+      <a href="#showcase" class="hidemob">Live fleet</a>
       <a href="#how" class="hidemob">How it works</a>
-      <a class="btn primary" href="#access">Request access</a>
+      <a class="btn primary" href="#access">Get the Kit</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <span class="pill">🔒 <b>Private beta</b> — onboarding the first batch of teams</span>
-    <h1>Your AI engineer, <span class="grad">living in your chat. Never sleeping.</span></h1>
-    <p class="sub">Run Claude Code from any <b>Feishu (Lark)</b> chat — each thread is a live session that replies back. Then schedule autonomous agents that research, monitor, and ship while you sleep, reporting straight to your phone. Self-hosted on your own box: your keys, your code, no public IP.</p>
+    <span class="pill">🚧 <b>Early access</b> — first batch gets founder pricing</span>
+    <h1>Agents that <span class="grad">run for months. Not demos that die overnight.</span></h1>
+    <p class="sub">You've already wired Claude Code into Feishu, WeChat, Slack or Telegram — bridges solved the plumbing. Then the scheduled agents start failing: lost context, double fires, zombie processes, the same mistake every morning. The Kit is the missing <b>operations layer</b>: battle-tested agent templates plus the playbook that keeps a real fleet reporting in every single day.</p>
     <div class="cta">
-      <a class="btn primary" href="#access">Request early access →</a>
-      <a class="btn ghost" href="#showcase">See it in action</a>
+      <a class="btn primary" href="#access">Get early access →</a>
+      <a class="btn ghost" href="#showcase">See the live fleet</a>
     </div>
     <div class="meta">
-      <span><span class="ok">●</span> Self-hosted — your keys, your machine</span>
-      <span><span class="ok">●</span> macOS &amp; Linux</span>
-      <span><span class="ok">●</span> No public IP, no webhook</span>
+      <span><span class="ok">●</span> Bridge-agnostic — cc-connect, any bridge, bare cron</span>
+      <span><span class="ok">●</span> Plain prompts + file conventions, no SDK lock-in</span>
+      <span><span class="ok">●</span> Extracted from a real production fleet</span>
     </div>
 
     <div class="mock">
-      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">Feishu · #eng-team</span></div>
+      <div class="bar"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i><span class="t">#daily-agents</span></div>
       <div class="chat">
-        <div class="msg me"><div class="who">You</div>What's failing in the flaky checkout test? Fix it and push a branch.</div>
-        <div class="typing"><i></i><i></i><i></i> Claude is working in <span class="mono">~/workspace/shop</span> …</div>
-        <div class="msg bot"><div class="who">Claude Code</div>Root cause: a race in <code>useCart()</code> — cleanup fired before the debounce. Patched, tests green ✅ Pushed <code>fix/cart-race</code>.</div>
-        <div class="msg me"><div class="who">You</div>Nice. Also set up a daily 9am agent to digest new Anthropic posts here.</div>
-        <div class="msg bot"><div class="who">Claude Code</div>Done — scheduled <code>anthropic-blog-daily</code>, reporting into this group every morning. 🗓️</div>
+        <div class="msg bot"><div class="who">news-digest · 07:00</div>Morning brief ready — 6 stories, 2 flagged as duplicates of yesterday and skipped (seen-list). Sources linked. ☕</div>
+        <div class="msg me"><div class="who">You</div>Too much crypto. More AI infra, please.</div>
+        <div class="msg bot"><div class="who">news-digest</div>Logged to <code>feedback.md</code> — crypto demoted, AI infra boosted. Future runs adjust automatically. ✅</div>
+        <div class="msg bot"><div class="who">news-digest · next day, 07:00</div>Morning brief ready — applied your feedback: 4 AI-infra stories, 0 crypto. Run journaled, lesson recorded. 📓</div>
       </div>
     </div>
   </div>
@@ -159,25 +158,25 @@
 
 <section id="features">
   <div class="wrap">
-    <div class="eyebrow">Why teams want it</div>
-    <h2>A chat client for your Claude Code — and a scheduler for it.</h2>
-    <p class="lead">One daemon holds the sole Feishu connection. Sessions stay bound to their chat, structurally — replies never cross-leak between groups. Everything runs on your own machine.</p>
+    <div class="eyebrow">What's inside</div>
+    <h2>The plumbing is free. The discipline isn't.</h2>
+    <p class="lead">Free bridges give you a scheduler in ten minutes. What they don't give you is an agent that's still useful in month two. The Kit ships the five operational systems a long-running agent actually needs — each as ready-to-paste prompt sections and file conventions:</p>
     <div class="grid">
-      <div class="feat"><div class="ic">🧵</div><h3>Thread = session</h3><p>Every Feishu thread maps to one Claude session. Reply in an old thread to revive it — same working directory, fresh context.</p></div>
-      <div class="feat"><div class="ic">🗂️</div><h3>Per-group working dir</h3><p>Point the “frontend” group at one repo, “data” at another. Each message spawns Claude in the right project automatically.</p></div>
-      <div class="feat"><div class="ic">⏰</div><h3>Cron agents, from chat</h3><p>“Every day at 9, check X and post here.” A built-in scheduler creates the job; each run opens a result topic in the target group.</p></div>
-      <div class="feat"><div class="ic">📱</div><h3>Terminal mirroring</h3><p>Local <span class="mono">claude</span> sessions auto-announce to your default chat and mirror each turn. Reply from your phone to steer.</p></div>
-      <div class="feat"><div class="ic">🛡️</div><h3>Access control built in</h3><p>Pairing codes → allowlist → locked. Per-group @-mention rules. A session can only ever reply into its own source chat.</p></div>
-      <div class="feat"><div class="ic">🔒</div><h3>Self-hosted, no IP</h3><p>Feishu WebSocket long connection — nothing to expose, no tunnel. Your credentials and code never leave your box.</p></div>
+      <div class="feat"><div class="ic">🧠</div><h3>Memory protocol</h3><p>Lessons, journal, and improvement files with strict append rules. The agent reads its playbook before work and logs after — every run learns from the last.</p></div>
+      <div class="feat"><div class="ic">🔁</div><h3>Feedback loop</h3><p>Your chat replies become structured feedback that provably changes future runs — likes, vetoes, and constraints all land in files the agent must consult.</p></div>
+      <div class="feat"><div class="ic">📌</div><h3>State &amp; dedup</h3><p>Last-seen cursors, seen-lists, and idempotent run design. No double fires, no re-announcing yesterday's news, no losing your place after a crash.</p></div>
+      <div class="feat"><div class="ic">🛡️</div><h3>Guardrails</h3><p>Hard gates the agent can't talk itself out of: "no source, no claim", verification before completion, kill-criteria for low-quality output days.</p></div>
+      <div class="feat"><div class="ic">🩺</div><h3>Anti-zombie ops</h3><p>Missed-fire recovery, health checks, and a month-two survival checklist for the failure modes every fleet hits: silent stalls, drift, context loss.</p></div>
+      <div class="feat"><div class="ic">📦</div><h3>Templates, not theory</h3><p>Five complete agent templates — digest, watcher, researcher, learning coach, self-improver — each extracted from an agent that runs in production today.</p></div>
     </div>
   </div>
 </section>
 
 <section id="showcase">
   <div class="wrap">
-    <div class="eyebrow">In action</div>
-    <h2>Set a prompt once. Let it run every day.</h2>
-    <p class="lead">A sample of real agents running on it right now — each defined by a single prompt, scheduled once, then left alone to report in:</p>
+    <div class="eyebrow">Live fleet</div>
+    <h2>Every template comes from an agent that's running right now.</h2>
+    <p class="lead">The Kit isn't written from imagination — each pattern is extracted from this fleet, which fires daily into a real chat workspace. A sample:</p>
     <div class="shorow">
 
       <div class="agent">
@@ -233,46 +232,45 @@
       </div>
 
     </div>
-    <div class="note">A young but real fleet — these agents have run daily since early June 2026, every fire reporting into Feishu. We show what they <i>do</i>, not inflated uptime.</div>
+    <div class="note">A young but real fleet — these agents have run daily since early June 2026, every fire reporting into chat, every run journaled by the same memory protocol you get in the Kit. We show what they <i>do</i>, not inflated uptime.</div>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
     <div class="eyebrow">How it works</div>
-    <h2>Live in your chat in minutes.</h2>
-    <p class="lead">Onboarding installs on your own machine (macOS or Linux). Early-access members get a guided setup — and the connect step is collapsing to a single QR scan:</p>
+    <h2>Pick a template. Drop it in. Run the playbook.</h2>
+    <p class="lead">The Kit is plain markdown — prompts, file scaffolds, and checklists. It rides on whatever you already run; there's nothing to install and nothing that can break:</p>
     <div class="steps">
       <div class="step">
         <div class="n">1</div>
-        <h3>Install</h3>
-        <p>Drop the plugin into Claude Code and start the background service (launchd on macOS, systemd on Linux). One command each.</p>
+        <h3>Pick a template</h3>
+        <p>Digest, watcher, researcher, learning coach, or self-improving agent — each ships as a complete prompt plus its memory/state file scaffold.</p>
       </div>
       <div class="step">
         <div class="n">2</div>
-        <h3>Connect Feishu</h3>
-        <p>Link your Feishu bot so the daemon can receive and reply over the WebSocket long connection.</p>
-        <span class="soon">🔜 One-scan setup — device-flow registration mints credentials & scopes from a single QR confirm.</span>
+        <h3>Drop it into your stack</h3>
+        <p>Works with cc-connect, OpenClaw, any chat bridge, or bare cron + Claude Code. If your scheduler can fire a prompt on a timer, the Kit runs on it.</p>
       </div>
       <div class="step">
         <div class="n">3</div>
-        <h3>Pair &amp; go</h3>
-        <p>DM the bot, pair with a 6-char code, add your groups, and schedule your first agent — all from chat.</p>
+        <h3>Run the playbook</h3>
+        <p>Wire the memory protocol, guardrails, and health checks. Your agent now learns from every run instead of repeating yesterday's mistake.</p>
       </div>
     </div>
     <div class="archbox">
-<pre>        Feishu Open Platform
-                │  im.message.receive_v1 (WSS)
-                ▼
-   ┌──────────────────────────────────────────────┐
-   │  claude-feishu-daemon   (launchd / systemd)   │
-   │   WSClient → gate(config) → router            │
-   │      thread known ─→ session shim             │
-   │      new message  ─→ spawn (new tmux window)  │
-   │      cron fire    ─→ scheduled run            │
-   │   outbound → one resolver (session ↔ chat)    │
-   └──────────────────────────────────────────────┘
-   Runs entirely on your machine · keys stay in ~/.agents</pre>
+<pre>  kit/
+    playbook/                     the ops manual
+      01-memory-protocol.md         lessons · journal · improvements
+      02-state-and-dedup.md         cursors · seen-lists · idempotent runs
+      03-feedback-loop.md           chat replies → behavior change
+      04-guardrails.md              hard gates the agent can't skip
+      05-anti-zombie-ops.md         missed fires · stalls · drift
+    templates/
+      daily-digest/   watcher/   researcher/
+      learning-coach/   self-improving/
+    checklists/
+      pre-flight.md   month-two-survival.md</pre>
     </div>
   </div>
 </section>
@@ -281,16 +279,16 @@
   <div class="wrap">
     <div class="eyebrow" style="text-align:center">Early access</div>
     <div class="accesscard">
-      <h3>Be in the first batch.</h3>
-      <p>We're onboarding a small group of teams with a license plus hands-on setup. Leave your email and we'll reach out with access and pricing.</p>
+      <h3>Get the Kit at founder pricing.</h3>
+      <p>Launching at <b>$49</b> (templates) / <b>$99</b> (templates + full playbook + updates). The first batch of early-access buyers gets founder pricing and a direct line for requests. Leave your email:</p>
       <form class="form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.nextElementSibling.style.display='block';">
         <input type="email" placeholder="you@company.com" required />
-        <button class="btn primary" type="submit">Request access</button>
+        <button class="btn primary" type="submit">Join the waitlist</button>
       </form>
       <div class="pricehint" style="display:none;color:var(--acc2)">Early access opens soon — the signup form goes live shortly.</div>
       <div class="perks">
-        <span><span class="ck">✓</span> Founder onboarding call</span>
-        <span><span class="ck">✓</span> Early-adopter pricing</span>
+        <span><span class="ck">✓</span> Founder pricing, locked in</span>
+        <span><span class="ck">✓</span> All future template updates</span>
         <span><span class="ck">✓</span> Direct line for requests</span>
       </div>
     </div>
@@ -299,8 +297,8 @@
 
 <footer>
   <div class="wrap">
-    <div class="brand"><span class="dot"></span> Feishu&nbsp;×&nbsp;Claude Code</div>
-    <div style="color:var(--dim)">© 2026 · Self-hosted AI agent platform · <a href="#access">Request access</a></div>
+    <div class="brand"><span class="dot"></span> Always-On Agent Kit</div>
+    <div style="color:var(--dim)">© 2026 · Templates &amp; ops playbook for long-running Claude Code agents · <a href="#access">Get the Kit</a></div>
   </div>
 </footer>
 
