@@ -97,15 +97,23 @@
   .archbox{margin-top:36px;background:#0a0c11;border:1px solid var(--line);border-radius:14px;padding:22px;overflow-x:auto}
   .archbox pre{color:var(--mut);font-size:12.5px;line-height:1.5;font-family:var(--mono)}
 
-  /* access / waitlist */
+  /* access / pricing */
   .access{background:linear-gradient(180deg,#10131c,#0c0f16)}
-  .accesscard{margin-top:40px;border:1px solid var(--line);border-radius:18px;background:radial-gradient(120% 140% at 50% 0%,rgba(51,112,255,.12),transparent 60%),var(--card);padding:42px 32px;text-align:center}
-  .accesscard h3{font-size:24px;letter-spacing:-.4px}
-  .accesscard p{color:var(--mut);margin-top:10px;max-width:48ch;margin-left:auto;margin-right:auto;font-size:15px}
-  .form{margin-top:26px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-  .form input{background:#0a0c11;border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--fg);font-size:14.5px;min-width:280px;font-family:var(--sans)}
-  .form input:focus{outline:none;border-color:var(--acc)}
-  .pricehint{margin-top:18px;font-size:12.5px;color:var(--dim)}
+  .pricegrid{margin-top:40px;display:grid;grid-template-columns:repeat(2,minmax(0,420px));gap:20px;justify-content:center}
+  @media(max-width:760px){.pricegrid{grid-template-columns:1fr}}
+  .pricecard{position:relative;border:1px solid var(--line);border-radius:18px;background:var(--card);padding:30px 28px;display:flex;flex-direction:column}
+  .pricecard.hot{border-color:rgba(110,139,255,.55);background:radial-gradient(120% 140% at 50% 0%,rgba(51,112,255,.14),transparent 60%),var(--card)}
+  .pricecard .tier{font-size:13px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);font-weight:650}
+  .pricecard .price{margin-top:10px;font-size:40px;font-weight:720;letter-spacing:-1px}
+  .pricecard .price small{font-size:14px;color:var(--dim);font-weight:500;letter-spacing:0}
+  .pricecard .was{color:var(--dim);font-size:15px;text-decoration:line-through;margin-left:8px;font-weight:500}
+  .pricecard ul{margin:20px 0 26px;list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--mut)}
+  .pricecard ul .ck{color:var(--acc2);margin-right:8px}
+  .pricecard ul .dim{color:var(--dim)}
+  .pricecard .btn{justify-content:center;margin-top:auto;padding:12px 16px;font-size:15px}
+  .hotpill{position:absolute;top:-12px;left:50%;transform:translateX(-50%);font-size:11.5px;font-weight:650;color:#0b0d12;background:linear-gradient(120deg,#8ea2ff,#41d1a7);padding:4px 12px;border-radius:999px;letter-spacing:.4px}
+  .buynote{margin-top:22px;text-align:center;font-size:12.5px;color:var(--dim)}
+  .buynote a{color:var(--mut);text-decoration:underline}
   .perks{margin-top:30px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:13.5px;color:var(--mut)}
   .perks span{display:flex;gap:8px;align-items:center}.perks .ck{color:var(--acc2)}
 
@@ -135,7 +143,7 @@
     <h1>Agents that <span class="grad">run for months. Not demos that die overnight.</span></h1>
     <p class="sub">You've already wired Claude Code into Feishu, WeChat, Slack or Telegram — bridges solved the plumbing. Then the scheduled agents start failing: lost context, double fires, zombie processes, the same mistake every morning. The Kit is the missing <b>operations layer</b>: battle-tested agent templates plus the playbook that keeps a real fleet reporting in every single day.</p>
     <div class="cta">
-      <a class="btn primary" href="#access">Get early access →</a>
+      <a class="btn primary" href="#access">Get the Kit — from $49 →</a>
       <a class="btn ghost" href="#showcase">See the live fleet</a>
     </div>
     <div class="meta">
@@ -277,20 +285,43 @@
 
 <section id="access" class="access">
   <div class="wrap">
-    <div class="eyebrow" style="text-align:center">Early access</div>
-    <div class="accesscard">
-      <h3>Get the Kit at founder pricing.</h3>
-      <p>Launching at <b>$49</b> (templates) / <b>$99</b> (templates + full playbook + updates). The first batch of early-access buyers gets founder pricing and a direct line for requests. Leave your email:</p>
-      <form class="form" onsubmit="event.preventDefault();this.querySelector('input').value='';this.nextElementSibling.style.display='block';">
-        <input type="email" placeholder="you@company.com" required />
-        <button class="btn primary" type="submit">Join the waitlist</button>
-      </form>
-      <div class="pricehint" style="display:none;color:var(--acc2)">Early access opens soon — the signup form goes live shortly.</div>
-      <div class="perks">
-        <span><span class="ck">✓</span> Founder pricing, locked in</span>
-        <span><span class="ck">✓</span> All future template updates</span>
-        <span><span class="ck">✓</span> Direct line for requests</span>
+    <div class="eyebrow" style="text-align:center">Founder pricing</div>
+    <h2 style="text-align:center;margin-left:auto;margin-right:auto">Buy once. Your agents level up for good.</h2>
+    <!-- GO-LIVE: replace POLAR_CHECKOUT_49 / POLAR_CHECKOUT_99 with real Polar checkout links before merging to main -->
+    <div class="pricegrid">
+
+      <div class="pricecard">
+        <div class="tier">Templates</div>
+        <div class="price">$49 <small>one-time</small></div>
+        <ul>
+          <li><span class="ck">✓</span>All 5 agent templates — digest, watcher, researcher, learning coach, self-improver</li>
+          <li><span class="ck">✓</span>Memory / state file scaffolds for each template</li>
+          <li><span class="ck">✓</span>Pre-flight checklist</li>
+          <li class="dim"><span class="ck" style="color:var(--dim)">—</span>Ops playbook not included</li>
+        </ul>
+        <a class="btn ghost" href="POLAR_CHECKOUT_49">Get Templates →</a>
       </div>
+
+      <div class="pricecard hot">
+        <span class="hotpill">FOUNDER BATCH</span>
+        <div class="tier">Full Kit</div>
+        <div class="price">$99 <small>one-time</small></div>
+        <ul>
+          <li><span class="ck">✓</span>Everything in Templates</li>
+          <li><span class="ck">✓</span>Full ops playbook — memory protocol, state &amp; dedup, feedback loops, guardrails, anti-zombie ops</li>
+          <li><span class="ck">✓</span>Private GitHub repo access — pull updates as the fleet learns new lessons</li>
+          <li><span class="ck">✓</span>Month-two survival checklist</li>
+          <li><span class="ck">✓</span>Direct line for requests</li>
+        </ul>
+        <a class="btn primary" href="POLAR_CHECKOUT_99">Get the Full Kit →</a>
+      </div>
+
+    </div>
+    <div class="buynote">Secure checkout by Polar — taxes handled, instant delivery. Not ready? <a href="mailto:longxiaoges@gmail.com?subject=Agent%20Kit%20v1%20notify%20me">Email me when v1 ships</a>.</div>
+    <div class="perks">
+      <span><span class="ck">✓</span> Founder pricing, locked in</span>
+      <span><span class="ck">✓</span> All future template updates</span>
+      <span><span class="ck">✓</span> 14-day refund, no questions</span>
     </div>
   </div>
 </section>
