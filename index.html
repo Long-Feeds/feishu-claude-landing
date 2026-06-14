@@ -117,6 +117,12 @@
   .perks{margin-top:30px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap;font-size:13.5px;color:var(--mut)}
   .perks span{display:flex;gap:8px;align-items:center}.perks .ck{color:var(--acc2)}
 
+  .faq{margin-top:40px;display:flex;flex-direction:column;gap:14px}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .qa h3{font-size:15.5px;letter-spacing:-.2px}
+  .qa p{margin-top:9px;color:var(--mut);font-size:14px}
+  .qa code{font-family:var(--mono);font-size:13px;color:var(--acc2)}
+
   footer{padding:46px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
   footer a{color:var(--mut)}footer a:hover{color:var(--fg)}
@@ -132,6 +138,7 @@
       <a href="#features" class="hidemob">What's inside</a>
       <a href="#showcase" class="hidemob">Live fleet</a>
       <a href="#how" class="hidemob">How it works</a>
+      <a href="#faq" class="hidemob">FAQ</a>
       <a class="btn primary" href="#access">Get the Kit</a>
     </div>
   </div>
@@ -175,7 +182,7 @@
       <div class="feat"><div class="ic">📌</div><h3>State &amp; dedup</h3><p>Last-seen cursors, seen-lists, and idempotent run design. No double fires, no re-announcing yesterday's news, no losing your place after a crash.</p></div>
       <div class="feat"><div class="ic">🛡️</div><h3>Guardrails</h3><p>Hard gates the agent can't talk itself out of: "no source, no claim", verification before completion, kill-criteria for low-quality output days.</p></div>
       <div class="feat"><div class="ic">🩺</div><h3>Anti-zombie ops</h3><p>Missed-fire recovery, health checks, and a month-two survival checklist for the failure modes every fleet hits: silent stalls, drift, context loss.</p></div>
-      <div class="feat"><div class="ic">📦</div><h3>Templates, not theory</h3><p>Five complete agent templates — digest, watcher, researcher, learning coach, self-improver — each extracted from an agent that runs in production today.</p></div>
+      <div class="feat"><div class="ic">📦</div><h3>Templates, not theory</h3><p>Agent templates extracted from production — each shipped with the memory/state scaffold most "templates" leave out. Two ready today (digest, researcher); three more shipping in the founder batch.</p></div>
     </div>
   </div>
 </section>
@@ -322,6 +329,21 @@
       <span><span class="ck">✓</span> Founder pricing, locked in</span>
       <span><span class="ck">✓</span> All future template updates</span>
       <span><span class="ck">✓</span> 14-day refund, no questions</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="eyebrow">FAQ</div>
+    <h2>Questions worth asking before you buy.</h2>
+    <div class="faq">
+      <div class="qa"><h3>Isn't this just prompts I could write myself?</h3><p>You could — after your agents fail the same way ours did. The Kit is the post-mortem: the memory, state, and guardrail conventions that survived months of real daily runs, so you skip the month-two graveyard. You're buying the failures we already paid for.</p></div>
+      <div class="qa"><h3>What exactly do I get?</h3><p>Plain-markdown prompts plus the file scaffolds — memory, state, dedup — for each template, and the five-chapter ops playbook. The Full Kit is delivered as a private GitHub repo invite: clone it, drop the pieces into your own agents.</p></div>
+      <div class="qa"><h3>Will it work with my setup?</h3><p>If your scheduler can fire a prompt on a timer, yes. Bridge-agnostic — cc-connect, OpenClaw, any chat bridge, or bare cron + Claude Code. No SDK, no framework, nothing to install or lock into.</p></div>
+      <div class="qa"><h3>Templates or Full Kit — which do I need?</h3><p>Templates if you just want working agents to copy. Full Kit if you want the playbook — the <i>why</i> behind each pattern and the ops discipline — plus repo updates as the fleet learns new lessons. Most people running agents daily want the playbook.</p></div>
+      <div class="qa"><h3>How do updates work?</h3><p>Full Kit buyers keep private repo access. When the production fleet learns a new lesson, the repo gets the fix and you <code>git pull</code>. You're buying the Kit's future, not a snapshot.</p></div>
+      <div class="qa"><h3>What if it's not for me?</h3><p>14-day refund, no questions asked. If it doesn't survive contact with your fleet, reply to your receipt and get your money back.</p></div>
     </div>
   </div>
 </section>
