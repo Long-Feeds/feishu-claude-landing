@@ -123,6 +123,14 @@
   .qa p{margin-top:9px;color:var(--mut);font-size:14px}
   .qa code{font-family:var(--mono);font-size:13px;color:var(--acc2)}
 
+  .excerpt{margin-top:34px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#0e1119,var(--card));overflow:hidden}
+  .ex-head{padding:11px 18px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
+  .ex-tag{font-family:var(--mono);font-size:12px;color:var(--acc2)}
+  .ex-body{padding:24px 26px}
+  .ex-body h3{font-size:18px;letter-spacing:-.3px;color:var(--fg)}
+  .ex-body p{margin-top:12px;color:var(--mut);font-size:14.5px;line-height:1.7}
+  .ex-body .ex-bullet{color:var(--dim);font-size:14px;border-left:2px solid var(--line);padding-left:14px;margin-top:14px}
+
   footer{padding:46px 0;border-top:1px solid var(--line);color:var(--dim);font-size:13.5px}
   footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
   footer a{color:var(--mut)}footer a:hover{color:var(--fg)}
@@ -213,28 +221,28 @@
       </div>
 
       <div class="agent">
-        <div class="av">🎧</div>
+        <div class="av">🎓</div>
         <div>
-          <h3>english-listening-daily <span class="sched">10:00</span></h3>
-          <p>Delivers a BBC 6-Minute English episode as a voice message plus a vocab list, and nudges you to practice.</p>
+          <h3>study-coach <span class="sched">10:00</span></h3>
+          <p>Pushes a daily learning drill with a recap list, tracks progress that survives restarts, and nudges you to keep the streak.</p>
           <div class="run"><span class="live"></span> running daily since Jun 9 · last run ok</div>
         </div>
       </div>
 
       <div class="agent">
-        <div class="av">📺</div>
+        <div class="av">👀</div>
         <div>
-          <h3>bilibili-meitou-daily <span class="sched">09:03</span></h3>
-          <p>Watches a Bilibili creator for new uploads and pushes a digest so you never miss an episode.</p>
+          <h3>release-watcher <span class="sched">09:03</span></h3>
+          <p>Watches a creator / feed / repo for new uploads and pings only on genuinely new items — never re-alerts on what you've seen.</p>
           <div class="run"><span class="live"></span> running daily since Jun 6 · last run ok</div>
         </div>
       </div>
 
       <div class="agent">
-        <div class="av">💡</div>
+        <div class="av">🔎</div>
         <div>
-          <h3>sidehustle-finder <span class="sched">04:00</span></h3>
-          <p>Finds and rigorously validates one software / info-arbitrage business idea every day — sources, unit economics, kill-reasons.</p>
+          <h3>research-scout <span class="sched">04:00</span></h3>
+          <p>Validates one opportunity a day against ≥2 independent sources with hard kill-criteria — and reports an honest "nothing today" when nothing clears the bar.</p>
           <div class="run"><span class="live"></span> running daily since Jun 9 · last run ok</div>
         </div>
       </div>
@@ -287,6 +295,23 @@
     checklists/
       pre-flight.md   month-two-survival.md</pre>
     </div>
+  </div>
+</section>
+
+<section id="excerpt">
+  <div class="wrap">
+    <div class="eyebrow">Peek inside</div>
+    <h2>Real pages, not a sales pitch.</h2>
+    <p class="lead">An unedited passage from the playbook — Chapter 05, Anti-Zombie Ops. This is the voice and the depth of all five chapters.</p>
+    <div class="excerpt">
+      <div class="ex-head"><span class="ex-tag">playbook / 05-anti-zombie-ops.md</span></div>
+      <div class="ex-body">
+        <h3>Exit when you're done — completion is an act, not a hope</h3>
+        <p>The most expensive zombie is the one that <b>already succeeded.</b> When the run's contract is fulfilled — output delivered, state persisted, journal appended — the agent must <i>terminate</i>. It does not "stay available in case." A supervisor timeout reaping a finished session is not the lifecycle working; it's a bug report that says nothing told the agent to stop.</p>
+        <p class="ex-bullet"><b>The bonus-compute trap:</b> when a finished agent has time left and you let it keep building, that continuation is exactly where hangs happen. Put a hard deadline on it — "build until T, then stop and exit" — or the finished agent becomes the hung one.</p>
+      </div>
+    </div>
+    <div class="note" style="border-left-color:var(--acc)">Five chapters like this — memory, state &amp; dedup, feedback loops, guardrails, anti-zombie ops — each distilled from real production incidents, not theory.</div>
   </div>
 </section>
 
